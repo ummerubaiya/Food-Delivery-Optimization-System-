@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Delivery Optimization System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Food Delivery Optimization System</h1>
+
+    <!-- Order Input -->
+    <div class="order-input">
+      <h2>Place an Order</h2>
+      <div class="input-group">
+        <input type="text" id="customerId" placeholder="Enter Customer ID"/>
+      </div>
+      <div class="input-group">
+        <select id="orderMeal">
+          <option value="">Select Meal</option>
+          <option value="Pizza">Pizza</option>
+          <option value="Burger">Burger</option>
+          <option value="Pasta">Pasta</option>
+          <option value="Sushi">Sushi</option>
+<option value="Salad">Salad</option>
+<option value="Sandwich">Sandwich</option>
+<option value="Soup">Soup</option>
+<option value="Steak">Steak</option>
+<option value="Rice">Rice</option>
+<option value="Noodles">Noodles</option>
+<option value="Curry">Curry</option>
+<option value="Tacos">Tacos</option>
+<option value="Fries">Fries</option>
+<option value="Ice Cream">Ice Cream</option>
+<option value="Donuts">Donuts</option>
+<option value="Cake">Cake</option>
+<option value="Chicken">Chicken</option>
+<option value="Falafel">Falafel</option>
+<option value="Wrap">Wrap</option>
+<option value="Pancakes">Pancakes</option>
+
+          <!-- Add more meals as needed -->
+        </select>
+      </div>
+      <div class="input-group">
+        <input type="number" id="deliveryDistance" placeholder="Distance (0 - 50 km)" min="0" max="50"/>
+      </div>
+      <button onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <!-- Order Queues -->
+    <div class="order-queues">
+      <div class="order-row">
+        <div class="order-column">
+          <h3>Order Assignment (FCFS)</h3>
+          <table id="fcfsQueue">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Order Time</th>
+                <th>Meal Name</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        
+        <div class="order-column">
+          <h3>Delivery Prioritization (SJF)</h3>
+          <table id="sjfQueue">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Distance</th>
+                <th>Meal Name</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        
+        <div class="order-column">
+          <h3>Frequently Ordered Meals (FIFO)</h3>
+          <ul id="fifoMeals"></ul>
+        </div>
+      </div>
+    
+      <div class="order-row">
+        <div class="order-column">
+          <h3>FCFS Results</h3>
+          <p id="fcfsResults"></p>
+        </div>
+    
+        <div class="order-column">
+          <h3>SJF Results</h3>
+          <p id="sjfResults"></p>
+        </div>
+    
+        <div class="order-column">
+          <h3>Most Recent Customer (LRU)</h3>
+          <ul id="lruMeals"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
